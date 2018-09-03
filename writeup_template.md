@@ -128,11 +128,11 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![Image1](/my_data/11_right_of_way_at_the_next_intersection.jpg) 
-![Image2](/my_data/12_priority_road.jpg) 
-![Image3](/my_data/18_general_caution.jpg) 
-![Image4](/my_data/25_road_work.jpg) 
-![Image5](/my_data/33_turn_right_ahead.jpg)
+![Image1](/my_data/11_right_of_way_at_the_next_intersection_200x200.png) 
+![Image2](/my_data/12_priority_road_200x200.png) 
+![Image3](/my_data/18_general_caution_200x200.png) 
+![Image4](/my_data/25_road_work_200x200.png) 
+![Image5](/my_data/33_turn_right_ahead_200x200.png)
 
 The first image might be difficult to classify because ...
 
