@@ -55,7 +55,7 @@ signs data set:
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
 
-![Training Data Histogram](/images/Training_Data_Histogram.jpg)
+![Training Data Histogram](/images/Training_Data_Distribution.jpg)
 
 ### Design and Test a Model Architecture
 
@@ -120,7 +120,10 @@ If a well known architecture was chosen:
 * What architecture was chosen?
 * Why did you believe it would be relevant to the traffic sign application?
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+
+![Train_Validation_Test_Accuracy](/images/Test Accuracy0.png)
+
+![Test_Accuracy_By_Class](/images/Class Test Accuracy_0.png)
 
 ### Test a Model on New Images
 
