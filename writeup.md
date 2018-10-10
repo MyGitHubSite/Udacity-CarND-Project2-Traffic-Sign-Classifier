@@ -58,7 +58,7 @@ signs data set:
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
 
-![Training Data Histogram](/images/Training_Data_Distribution.png)
+![Training Data Histogram](/images/Training Data Distribution.png)
 
 ### Design and Test a Model Architecture
 
