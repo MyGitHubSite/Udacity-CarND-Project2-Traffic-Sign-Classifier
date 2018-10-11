@@ -105,13 +105,13 @@ I tried dropout and changing the number of epochs.  Ultimately, I did not go too
 
 In the final entry in the table I went for a large run with 50% dropout and a lighly lower learning rate.  It did not beat one of my more simple runs so it was not used in my final model.
 
-The architecture which gave me the best validation accuracy was model #4 with layer depths 128 and 32.
+The architecture which gave me the best validation accuracy was entry #4 with layer depths 128 and 32.
 
-Here is a training, validation and test plot for model #4 with layer depths 128 and 32.
+Here is a training, validation and test plot for entry #4 with layer depths 128 and 32.
 
 ![Train_Validation_Test_Accuracy](/images/Training_Accuracy30.png)
 
-For my final model I used the architecture of model #4 in the table but with only 30 epochs.  The final model results were:
+For my final model I used the architecture of entry #4 (layer depths 128 and 32) in the table but with only 30 epochs.  The final model results were:
 
 * training set accuracy of: 1.000
 * validation set accuracy of: 0.975 
