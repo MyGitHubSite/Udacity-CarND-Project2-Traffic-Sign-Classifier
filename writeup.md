@@ -158,42 +158,49 @@ The code for making predictions on my final model is located in the 11th cell of
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-|100.000   11: Right-of-way at the next intersection    100.000%
-|   30: Beware of ice/snow                       0.000%
-|   10: No passing for vehicles over 3.5 metric tons 0.000%
-|   16: Vehicles over 3.5 metric tons prohibited 0.000%
-|   21: Double curve                             0.000%
+| Probability	|     Prediction	                         					| 
+|:-----------:|:--------------------------------------------:| 
+| 100.000%| 11: Right-of-way at the next intersection |
+| 0.000%  | 30: Beware of ice/snow |
+| 0.000%  | 10: No passing for vehicles over 3.5 metric tons |
+| 0.000%  | 16: Vehicles over 3.5 metric tons prohibited |
+| 0.000%  | 21: Double curve |
 
-True Label is: = 12: Speed limit (30km/h)          
+Second image:
 
-   12: Priority road                            100.000%
-   15: No vehicles                              0.000%
-    9: No passing                               0.000%
-   40: Roundabout mandatory                     0.000%
-    7: Speed limit (100km/h)                    0.000%
+| Probability	|     Prediction  	   		| 
+|:-----------:|:---------------------:| 
+| 100.000% | 12: Priority road |   
+| 0.000%   | 15: No vehicles |
+| 0.000%   |  9: No passing |
+| 0.000%   | 40: Roundabout mandatory |
+| 0.000%   |  7: Speed limit (100km/h) |
 
-True Label is: = 18: Speed limit (50km/h)          
+Third image:
 
-   18: General caution                          100.000%
-   26: Traffic signals                          0.000%
-   25: Road work                                0.000%
-   27: Pedestrians                              0.000%
-   20: Dangerous curve to the right             0.000%
+| Probability         	|     Prediction	    		| 
+|:---------------------:|:-------------------:| 
+| 100.000% | 18: General caution              | 
+| 0.000%   | 26: Traffic signals              |
+| 0.000%   | 25: Road work                    |
+| 0.000%   | 27: Pedestrians                  |
+| 0.000%   | 20: Dangerous curve to the right |
 
-True Label is: = 25: Speed limit (60km/h)          
+Fourth image:
 
-   25: Road work                                100.000%
-   22: Bumpy road                               0.000%
-   19: Dangerous curve to the left              0.000%
-   30: Beware of ice/snow                       0.000%
-   29: Bicycles crossing                        0.000%
+| Probability         	|     Prediction	   		| 
+|:---------------------:|:------------------:| 
+| 100.000% | 25: Road work                   |
+| 0.000%   | 22: Bumpy road                  |
+| 0.000%   | 19: Dangerous curve to the left |
+| 0.000%   | 30: Beware of ice/snow          |
+| 0.000%   | 29: Bicycles crossing           |
+Fifth image:
 
-True Label is: = 33: Speed limit (70km/h)          
-
-   33: Turn right ahead                         100.000%
-   39: Keep left                                0.000%
-   13: Yield                                    0.000%
-   37: Go straight or left                      0.000%
-   12: Priority road                            0.000%
+| Probability |     Prediction	    					| 
+|:-----------:|:-----------------------:| 
+| 100.000% | 33: Turn right ahead       |
+| 0.000%   | 39: Keep left              |
+| 0.000%   | 13: Yield                  |
+| 0.000%   | 37: Go straight or left    |
+| 0.000%   | 12: Priority road          |
