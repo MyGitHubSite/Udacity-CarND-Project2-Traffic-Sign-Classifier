@@ -2,7 +2,7 @@
 ---
 ### Writeup / README
 
-Link to project code: [project code](Traffic_Sign_Classifier.ipynb)
+Link to project code: [Traffic_Sign_Classifier.ipynb](Traffic_Sign_Classifier.ipynb)
 
 ### 1. Data Set Summary & Exploration
 
@@ -31,12 +31,10 @@ Here is a visualization of the validation data.  It shows that the validation da
 
 ### 3. Design and Test a Model Architecture
 
-#### A. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
-
 In order to improve the classifications I tried out various data pre-processing and augmentation techniques.
 
 My data processing pipeline consisted of:
- - gamma correction (to reduce the darkness of images)
+ - gamma correction (to increase the brightness of images)
  - cropping (to eliminate parts of the image not needed)
  - resizing (to make the images all 32x32 pixels again)
  - grayscaling (to eliminate the color channels which are not needed, also to simplify the images for training)
@@ -44,11 +42,11 @@ My data processing pipeline consisted of:
  - rotation (to augment the data using variations of originals)
  - translation (to augment the data using variations of originals)
 
-Here is a visualization of the processing pipeline:
+Here is a visualization of my processing pipeline:
 
 ![Processing Pipeline](/images/6-End%20of%20speed%20limit%20(80km-h)_processed.png)
 
-Because some classes had less data than others the augmentation was an attempt to increase the number of images so that each class had about the same number of images before training.  (Note: Ultimately, I did not use the augmented data for my final model.)
+Because some classes had less data than others the augmentation was an attempt to increase the number of images (5000 for training and 1000 for validation) so that each class had about the same number of images.  (Note: Ultimately, I did not use the augmented data for my final model.)
 
 Here is an example of the training data after the augmentation:
 
@@ -86,24 +84,24 @@ To train the model, I used various model acrchitectures and hyperparameters to f
 |  2 |  (2)   |  No    | 1.0   | 20   | 0.001 | 0.942 | 0.954 | 0.966 | 0.953 | 
 |  3 |  (3)   |  No    | 1.0   | 20   | 0.001 | 0.941 | 0.942 | 0.955 | 0.962 | 
 |  4 |  (3)   |  No    | 1.0   | 50   | 0.001 | 0.957 | 0.964 | 0.972 |<b>0.975</b>| 
-|  5 |  (3)   |  No    | 0.0   | 50   | 0.001 | 0.950 | 0.961 | 0.960 | 0.962 | 
+|  5 |  (3)   |  No    | 0.9   | 50   | 0.001 | 0.950 | 0.961 | 0.960 | 0.962 | 
 |    |        |        |       |      |       |       |       |       |       | 
 |  6 |  (1)   |  Yes   | 1.0   | 20   | 0.001 | 0.835 | 0.909 | 0.924 | 0.908 | 
 |  7 |  (2)   |  Yes   | 1.0   | 20   | 0.001 | 0.909 | 0.930 | 0.948 | 0.931 | 
 |  8 |  (3)   |  Yes   | 1.0   | 20   | 0.001 | 0.911 | 0.938 | 0.943 | 0.952 | 
 |  9 |  (3)   |  Yes   | 1.0   | 50   | 0.001 | 0.934 | 0.948 | 0.956 | 0.951 | 
 | 10 |  (3)   |  Yes   | 0.9   | 50   | 0.001 | 0.930 | 0.945 | 0.957 | 0.948 | 
-| 11 |        |        |       |      |       |       |       |       |       | 
-| 12 |  (3)   |  No    | 0.5   | 500  | 0.0005 |   -   |   -   |   -   | 0.974 | 
+|    |        |        |       |      |       |       |       |       |       | 
+| 11 |  (3)   |  No    | 0.5   | 500  | 0.0005 |   -   |   -   |   -   | 0.974 | 
 
 Pre-Processing Steps:  
 (1) Grayscale, Normalize  
-(2) Crop, Resize, Grayscale, Normalize  
+(2) Crop(3,3), Resize(32,32), Grayscale, Normalize  
 (3) Gamma Correction (0.4), Crop (3,3), Resize (32,32), Grayscale, Normalize
 
-The pre-processing steps did improve the validation.  In the case of gamma correction it only improved validation when the depths of the first and second layer were 128 and 32.  Augmenting the data did not improve things for me so utimately I did not use it.  For future improvements I would take another look at augmenting to see why things were not improving.
+The pre-processing steps did improve the validation.  In the case of gamma correction it only improved validation when the depths of the first and second layer were 128 and 32 in my scenarios.  Augmenting the data did not improve things for me so utimately I did not use it.  For future improvements I would take another look at augmenting to see why things were not improving.
 
-I tried dropout and changing the number of epochs.  Ultimately, I did not go too far down the path of using dropout.  The number of epochs did have an effect of validation accuracy and I finally settled on early stoppage of 30 epochs for my final model.
+I tried dropout and changing the number of epochs.  Ultimately, I did not go too far down the path of using dropout.  The number of epochs did have an effect on validation accuracy and I finally settled on early stoppage of 30 epochs for my final model.
 
 In the final entry in the table I went for a large run with 50% dropout and a lighly lower learning rate.  It did not beat one of my more simple runs so it was not used in my final model.
 
@@ -137,7 +135,7 @@ Here are five German traffic signs that I found on the web:
 ![Image4](/my_data/25_road_work_200x200.png) 
 ![Image5](/my_data/33_turn_right_ahead_200x200.png)
 
-The first image might be difficult to classify because ...
+The signs are centered well in the images but do contain extra information within them which could lead to some uncertainty.  Image #5 as an example has mutliple extra traffic signs in the background.
 
 #### B. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -151,8 +149,7 @@ Here are the results of the prediction:
 | Road Work	      		| Road Work					 				|
 | Turn Right Ahead			| Turn Right Ahead      							|
 
-
-The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. 
 
 #### C. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
