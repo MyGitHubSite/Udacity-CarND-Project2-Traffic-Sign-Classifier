@@ -31,6 +31,8 @@ Here is a visualization of the validation data.  It shows that the validation da
 
 ### 3. Design and Test a Model Architecture
 
+#### A. Pre-Processing and Augmentation
+
 In order to improve the classifications I tried out various data pre-processing and augmentation techniques.
 
 My data processing pipeline consisted of:
@@ -74,7 +76,11 @@ My final model consisted of the following layers:
 
 #### C. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used various model acrchitectures and hyperparameters to find a "best" solution for validation accuracy.  In all cases I used a batch size of 128 and Adam optimization.  The results of my model runs for validation accuracy are summarized in the table below:
+My starting point for an architecture was the Le-Net architecture, which I modified.  
+
+To train the model, I used various model acrchitectures and hyperparameters to find a "best" solution for validation accuracy.  
+
+In all cases I used a batch size of 128 and Adam optimization.  The results of my model runs for validation accuracy are summarized in the table below:
 
 #### Validation Accuracy:
 
