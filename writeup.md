@@ -88,15 +88,30 @@ The difference between the original data set and the augmented data set is the f
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
+#Layers
+    layer1 = tf.nn.relu(tf.nn.conv2d(x, W1, strides=[1, 1, 1, 1], padding='VALID') + b1)
+    layer1 = tf.nn.max_pool(layer1, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='VALID')
+    layer2 = tf.nn.relu(tf.nn.conv2d(layer1, W2, strides=[1, 1, 1, 1], padding='VALID') + b2)
+    layer2 = tf.nn.max_pool(layer2, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='VALID')
+    layer3 = flatten(layer2)
+    layer4 = tf.nn.relu(tf.matmul(layer3, W4) + b4)
+    layer4 = tf.nn.dropout(layer4, p_dropout)
+    layer5 = tf.nn.relu(tf.matmul(layer4, W5) + b5)
+    layer5 = tf.nn.dropout(layer5, p_dropout)
+    logits = tf.matmul(layer5, W6) + b6
+    return logits
+    
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x128 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
+| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x128 	|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
 | Fully connected		| etc.        									|
 | Softmax				| etc.        									|
 |						|												|
