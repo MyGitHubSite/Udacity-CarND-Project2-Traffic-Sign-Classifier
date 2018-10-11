@@ -74,7 +74,7 @@ My final model consisted of the following layers:
 
 #### C. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used various model acrchitectures and hyperparameters to find a "best" solution for validation accuracy.  In all cases I used a batch size of 128.  The results of my model runs for validation accuracy are summarized in the table below:
+To train the model, I used various model acrchitectures and hyperparameters to find a "best" solution for validation accuracy.  In all cases I used a batch size of 128 and Adam optimization.  The results of my model runs for validation accuracy are summarized in the table below:
 
 #### Validation Accuracy:
 
@@ -129,14 +129,13 @@ For future improvements I would focus on increasing the number of quality sample
 
 Here are five German traffic signs that I found on the web:
 
-
 ![Image1](/my_data/11_right_of_way_at_the_next_intersection_200x200.png) 
 ![Image2](/my_data/12_priority_road_200x200.png) 
 ![Image3](/my_data/18_general_caution_200x200.png) 
 ![Image4](/my_data/25_road_work_200x200.png) 
 ![Image5](/my_data/33_turn_right_ahead_200x200.png)
 
-The signs are centered well in the images but do contain extra information within them which could lead to some uncertainty.  Image #5 as an example has mutliple extra traffic signs in the background.
+The signs are centered well in the images but do contain extra information within them which could lead to some uncertainty.  Image #5 as an example has mutliple extra traffic signs in the background.  Cropping the images likely helped in a few cases.
 
 #### B. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -205,3 +204,7 @@ For the fifth image, the model is very sure that this is a Turn Right Ahead sign
 | 0.000%   | 13: Yield                  |
 | 0.000%   | 37: Go straight or left    |
 | 0.000%   | 12: Priority road          |
+
+Most likely, the images were of above averge quality that the model could easily identify without hardly any uncertainty.
+
+
