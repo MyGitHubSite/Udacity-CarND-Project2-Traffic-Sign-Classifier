@@ -29,7 +29,7 @@ The goals / steps of this project are the following:
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 
 6-End of speed limit (80km-h).png
-6-End of speed limit (80km-h)_processed.png
+
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -48,17 +48,21 @@ You're reading it! and here is a link to my [project code](https://github.com/ud
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is ?
-* The size of the validation set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
+* The size of training set is: 34,799 images.
+* The size of the validation set is: 4,410 images.
+* The size of test set is: 12,630 images.
+* The shape of a traffic sign image is: 32x32x3 pixels.
+* The number of unique classes/labels in the data set is: 43.
 
 #### 2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+Here is an exploratory visualization of the training data set. It is a bar chart showing how the data distributed by type of traffic sign.  Some signs are represented more than others.
 
 ![Training Data Histogram](/images/Training%20Data%20Distribution.png)
+
+Here is a visualization of the validation data.  It shows that the validation data has a simlar distribution as the training data.
+
+![Validation Data Histogram](/images/Validation%20Data%20Distribution.png)
 
 ### Design and Test a Model Architecture
 
@@ -68,7 +72,7 @@ As a first step, I decided to convert the images to grayscale because ...
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][image2]
+![alt text][/images/6-End%20of%20speed%20limit%20(80km-h)_processed.png]
 
 As a last step, I normalized the image data because ...
 
@@ -78,9 +82,9 @@ To add more data to the the data set, I used the following techniques because ..
 
 Here is an example of an original image and an augmented image:
 
-![alt text][image3]
-
 The difference between the original data set and the augmented data set is the following ... 
+
+
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
