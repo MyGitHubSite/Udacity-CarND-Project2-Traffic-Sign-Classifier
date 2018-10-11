@@ -128,7 +128,7 @@ To train the model, I used an ....
 
 | Pre-Processing | Augment | Dropout | Epochs | 6x16 | 32x16 | 64x32 | 128x32 | 
 | Steps          | Data    |         |        |      |       |       |        | 
-| ----           | ---     | ---     | ---    | ---  | ---   | ---   | ---    | 
+|:--------------:|:-------:|:-------:|:------:|:----:|:-----:|:-----:|:------:| 
 
 
 My final model results were:
