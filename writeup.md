@@ -72,7 +72,7 @@ As a first step, I decided to convert the images to grayscale because ...
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][/images/6-End%20of%20speed%20limit%20(80km-h)_processed.png]
+![alt text](/images/6-End%20of%20speed%20limit%20(80km-h)_processed.png)
 
 As a last step, I normalized the image data because ...
 
@@ -84,8 +84,7 @@ Here is an example of an original image and an augmented image:
 
 The difference between the original data set and the augmented data set is the following ... 
 
-
-
+![Training Data Augmented Distribution](/images/Training%20Data%20Augmented%20Distribution.png)
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
