@@ -156,7 +156,7 @@ The model was able to correctly guess 5 of the 5 traffic signs, which gives an a
 
 The top five soft max probabilities for each image are shown below.
 
-#### For the first image, the model is very sure that this is a Right-Of-Way at Next Intersection sign (100%) and the model is correct.
+For the first image, the model is very sure that this is a Right-Of-Way at Next Intersection sign (100%) and the model is correct.
 
 | Probability	|     Prediction	                         					| 
 |:-----------:|:--------------------------------------------:| 
@@ -166,7 +166,7 @@ The top five soft max probabilities for each image are shown below.
 | 0.000%  | 16: Vehicles over 3.5 metric tons prohibited |
 | 0.000%  | 21: Double curve |
 
-#### For the second image, the model is very sure that this is a Priority Road sign (100%) and the model is correct.
+For the second image, the model is very sure that this is a Priority Road sign (100%) and the model is correct.
 
 | Probability	|     Prediction  	   		| 
 |:-----------:|:---------------------:| 
@@ -176,7 +176,7 @@ The top five soft max probabilities for each image are shown below.
 | 0.000%   | 40: Roundabout mandatory |
 | 0.000%   |  7: Speed limit (100km/h) |
 
-#### For the third image, the model is very sure that this is a General Caution sign (100%) and the model is correct.
+For the third image, the model is very sure that this is a General Caution sign (100%) and the model is correct.
 
 | Probability         	|     Prediction	    		| 
 |:---------------------:|:-------------------:| 
@@ -186,7 +186,7 @@ The top five soft max probabilities for each image are shown below.
 | 0.000%   | 27: Pedestrians                  |
 | 0.000%   | 20: Dangerous curve to the right |
 
-#### For the fourth image, the model is very sure that this is a Road Work sign (100%) and the model is correct.
+For the fourth image, the model is very sure that this is a Road Work sign (100%) and the model is correct.
 
 | Probability         	|     Prediction	   		| 
 |:---------------------:|:------------------:| 
@@ -196,7 +196,7 @@ The top five soft max probabilities for each image are shown below.
 | 0.000%   | 30: Beware of ice/snow          |
 | 0.000%   | 29: Bicycles crossing           |
 
-#### For the fifth image, the model is very sure that this is a Turn Right Ahead sign (100%) and the model is correct.
+For the fifth image, the model is very sure that this is a Turn Right Ahead sign (100%) and the model is correct.
 
 | Probability |     Prediction	    					| 
 |:-----------:|:-----------------------:| 
