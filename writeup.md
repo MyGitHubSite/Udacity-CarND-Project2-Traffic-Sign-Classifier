@@ -21,7 +21,7 @@ Here are some random samples of one of the sign classes:
 
 ![Examples](/images/6-End%20of%20speed%20limit%20(80km-h).png)
 
-Here is an exploratory visualization of the training data set. It is a bar chart showing how the data distributed by type of traffic sign.  Some signs are represented more than others.
+Here is an exploratory visualization of the training data set. It is a bar chart showing how the data is distributed by type of traffic sign.  Some signs are represented more than others.
 
 ![Training Data Histogram](/images/Training%20Data%20Distribution.png)
 
