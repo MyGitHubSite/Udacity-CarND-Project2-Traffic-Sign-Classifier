@@ -114,8 +114,8 @@ Here is a training, validation and test plot for model #4.
 For my final model I used the architecture of model #4 in the table but with only 30 epochs.  The final model results were:
 
 * training set accuracy of: 1.000
-* validation set accuracy of: 0.970 
-* test set accuracy of: 0.951
+* validation set accuracy of: 0.975 
+* test set accuracy of: 0.952
 
 I ran a test on each sign class to find strengths and weaknesses:
 
@@ -128,6 +128,7 @@ For future improvements I would focus on increasing the number of quality sample
 #### A. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
+
 
 ![Image1](/my_data/11_right_of_way_at_the_next_intersection_200x200.png) 
 ![Image2](/my_data/12_priority_road_200x200.png) 
@@ -159,13 +160,40 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+|100.000   11: Right-of-way at the next intersection    100.000%
+|   30: Beware of ice/snow                       0.000%
+|   10: No passing for vehicles over 3.5 metric tons 0.000%
+|   16: Vehicles over 3.5 metric tons prohibited 0.000%
+|   21: Double curve                             0.000%
 
+True Label is: = 12: Speed limit (30km/h)          
 
-For the second image ... 
+   12: Priority road                            100.000%
+   15: No vehicles                              0.000%
+    9: No passing                               0.000%
+   40: Roundabout mandatory                     0.000%
+    7: Speed limit (100km/h)                    0.000%
 
+True Label is: = 18: Speed limit (50km/h)          
 
+   18: General caution                          100.000%
+   26: Traffic signals                          0.000%
+   25: Road work                                0.000%
+   27: Pedestrians                              0.000%
+   20: Dangerous curve to the right             0.000%
+
+True Label is: = 25: Speed limit (60km/h)          
+
+   25: Road work                                100.000%
+   22: Bumpy road                               0.000%
+   19: Dangerous curve to the left              0.000%
+   30: Beware of ice/snow                       0.000%
+   29: Bicycles crossing                        0.000%
+
+True Label is: = 33: Speed limit (70km/h)          
+
+   33: Turn right ahead                         100.000%
+   39: Keep left                                0.000%
+   13: Yield                                    0.000%
+   37: Go straight or left                      0.000%
+   12: Priority road                            0.000%
