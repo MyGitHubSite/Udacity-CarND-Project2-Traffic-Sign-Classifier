@@ -78,7 +78,7 @@ To train the model, I used various model acrchitectures and hyperparameters to f
 
 #### Validation Accuracy:
 
-|  #  | Pre-Processing | Augment | Dropout | Epochs | Rate |   6x16  |  32x16  |  64x32  |  128x32 |
+|  #  | Pre-Processing | Augment | Dropout | Epochs | Rate |   6,16  |  32,16  |  64,32  |  128,32 |
 |:---:|:--------------:|:-------:|:-------:|:------:|:----:|:-------:|:-------:|:-------:|:-------:| 
 |  1 |  (1)   |  No    | 1.0   | 20   | 0.001 | 0.916 | 0.924 | 0.935 | 0.943 | 
 |  2 |  (2)   |  No    | 1.0   | 20   | 0.001 | 0.942 | 0.954 | 0.966 | 0.953 | 
