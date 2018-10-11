@@ -154,9 +154,9 @@ The model was able to correctly guess 5 of the 5 traffic signs, which gives an a
 
 #### C. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The top five soft max probabilities for each image are shown below.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+### For the first image, the model is very sure that this is a Right-Of-Way at Next Intersection sign (100%) and the model is correct.
 
 | Probability	|     Prediction	                         					| 
 |:-----------:|:--------------------------------------------:| 
@@ -166,7 +166,7 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 | 0.000%  | 16: Vehicles over 3.5 metric tons prohibited |
 | 0.000%  | 21: Double curve |
 
-Second image:
+### For the second image, the model is very sure that this is a Priority Road sign (100%) and the model is correct.
 
 | Probability	|     Prediction  	   		| 
 |:-----------:|:---------------------:| 
@@ -176,7 +176,7 @@ Second image:
 | 0.000%   | 40: Roundabout mandatory |
 | 0.000%   |  7: Speed limit (100km/h) |
 
-Third image:
+### For the third image, the model is very sure that this is a General Caution sign (100%) and the model is correct.
 
 | Probability         	|     Prediction	    		| 
 |:---------------------:|:-------------------:| 
@@ -186,7 +186,7 @@ Third image:
 | 0.000%   | 27: Pedestrians                  |
 | 0.000%   | 20: Dangerous curve to the right |
 
-Fourth image:
+### For the fourth image, the model is very sure that this is a Road Work sign (100%) and the model is correct.
 
 | Probability         	|     Prediction	   		| 
 |:---------------------:|:------------------:| 
@@ -195,7 +195,8 @@ Fourth image:
 | 0.000%   | 19: Dangerous curve to the left |
 | 0.000%   | 30: Beware of ice/snow          |
 | 0.000%   | 29: Bicycles crossing           |
-Fifth image:
+
+### For the fifth image, the model is very sure that this is a Turn Right Ahead sign (100%) and the model is correct.
 
 | Probability |     Prediction	    					| 
 |:-----------:|:-----------------------:| 
