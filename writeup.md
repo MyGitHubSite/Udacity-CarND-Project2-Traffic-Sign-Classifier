@@ -46,7 +46,7 @@ Here is a visualization of my processing pipeline:
 
 ![Processing Pipeline](/images/6-End%20of%20speed%20limit%20(80km-h)_processed.png)
 
-Because some classes had less data than others the augmentation was an attempt to increase the number of images (5000 for training and 1000 for validation) so that each class had about the same number of images.  (Note: Ultimately, I did not use the augmented data for my final model.)
+Because some classes had less data than others the augmentation was an attempt to increase the number of images so that each class had about the same number of images.  (Note: Ultimately, I did not use the augmented data for my final model.)
 
 Here is an example of the training data after the augmentation:
 
