@@ -48,25 +48,14 @@ Here is a visualization of the processing pipeline:
 
 ![Processing Pipeline](/images/6-End%20of%20speed%20limit%20(80km-h)_processed.png)
 
-Because some classes had less data than others the augmentation was an attempt to increase the number of images so that each class had about the same number of images before train.  Here is an example of the training data after the augmentation:
+Because some classes had less data than others the augmentation was an attempt to increase the number of images so that each class had about the same number of images before training.  (Note: Ultimately, I did not use the augmented data for my final model.)
+
+Here is an example of the training data after the augmentation:
 
 ![Training Data Augmented Distribution](/images/Training%20Data%20Augmented%20Distribution.png)
 
 #### B. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
-#Layers
-    layer1 = tf.nn.relu(tf.nn.conv2d(x, W1, strides=[1, 1, 1, 1], padding='VALID') + b1)
-    layer1 = tf.nn.max_pool(layer1, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='VALID')
-    layer2 = tf.nn.relu(tf.nn.conv2d(layer1, W2, strides=[1, 1, 1, 1], padding='VALID') + b2)
-    layer2 = tf.nn.max_pool(layer2, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='VALID')
-    layer3 = flatten(layer2)
-    layer4 = tf.nn.relu(tf.matmul(layer3, W4) + b4)
-    layer4 = tf.nn.dropout(layer4, p_dropout)
-    layer5 = tf.nn.relu(tf.matmul(layer4, W5) + b5)
-    layer5 = tf.nn.dropout(layer5, p_dropout)
-    logits = tf.matmul(layer5, W6) + b6
-    return logits
-    
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
@@ -87,32 +76,42 @@ My final model consisted of the following layers:
 
 #### C. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
-
-#### D. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+To train the model, I used various model acrchitectures and hyperparameters to find a "best" solution for validation accuracy.  In all cases I used a batch size of 128.  The results of my model runs for validation accuracy are summarized in the table below:
 
 #### Validation Accuracy:
 
-| Pre-Processing | Augment | Dropout | Epochs | Rate |   6x16  |  32x16  |  64x32  |  128x32 |
-|:--------------:|:-------:|:-------:|:------:|:----:|:-------:|:-------:|:-------:|:-------:| 
-|  (1)   |  No    | 1.0   | 20   | 0.001 | 0.916 | 0.924 | 0.935 | 0.943 | 
-|  (2)   |  No    | 1.0   | 20   | 0.001 | 0.942 | 0.954 | 0.966 | 0.953 | 
-|  (3)   |  No    | 1.0   | 20   | 0.001 | 0.941 | 0.942 | 0.955 | 0.962 | 
-|  (3)   |  No    | 1.0   | 50   | 0.001 | 0.957 | 0.964 | 0.972 |<b>0.975</b>| 
-|  (3)   |  No    | 0.0   | 50   | 0.001 | 0.950 | 0.961 | 0.960 | 0.962 | 
-|        |        |       |      |       |       |       |       |       | 
-|  (1)   |  Yes   | 1.0   | 20   | 0.001 | 0.835 | 0.909 | 0.924 | 0.908 | 
-|  (2)   |  Yes   | 1.0   | 20   | 0.001 | 0.909 | 0.930 | 0.948 | 0.931 | 
-|  (3)   |  Yes   | 1.0   | 20   | 0.001 | 0.911 | 0.938 | 0.943 | 0.952 | 
-|  (3)   |  Yes   | 1.0   | 50   | 0.001 | 0.934 | 0.948 | 0.956 | 0.951 | 
-|  (3)   |  Yes   | 0.9   | 50   | 0.001 | 0.930 | 0.945 | 0.957 | 0.948 | 
-|        |        |       |      |       |       |       |       |       | 
-|  (3)   |  No    | 0.5   | 500  | 0.0005 |   -   |   -   |   -   | 0.974 | 
+|  #  | Pre-Processing | Augment | Dropout | Epochs | Rate |   6x16  |  32x16  |  64x32  |  128x32 |
+|:---:|:--------------:|:-------:|:-------:|:------:|:----:|:-------:|:-------:|:-------:|:-------:| 
+|  1 |  (1)   |  No    | 1.0   | 20   | 0.001 | 0.916 | 0.924 | 0.935 | 0.943 | 
+|  2 |  (2)   |  No    | 1.0   | 20   | 0.001 | 0.942 | 0.954 | 0.966 | 0.953 | 
+|  3 |  (3)   |  No    | 1.0   | 20   | 0.001 | 0.941 | 0.942 | 0.955 | 0.962 | 
+|  4 |  (3)   |  No    | 1.0   | 50   | 0.001 | 0.957 | 0.964 | 0.972 |<b>0.975</b>| 
+|  5 |  (3)   |  No    | 0.0   | 50   | 0.001 | 0.950 | 0.961 | 0.960 | 0.962 | 
+|    |        |        |       |      |       |       |       |       |       | 
+|  6 |  (1)   |  Yes   | 1.0   | 20   | 0.001 | 0.835 | 0.909 | 0.924 | 0.908 | 
+|  7 |  (2)   |  Yes   | 1.0   | 20   | 0.001 | 0.909 | 0.930 | 0.948 | 0.931 | 
+|  8 |  (3)   |  Yes   | 1.0   | 20   | 0.001 | 0.911 | 0.938 | 0.943 | 0.952 | 
+|  9 |  (3)   |  Yes   | 1.0   | 50   | 0.001 | 0.934 | 0.948 | 0.956 | 0.951 | 
+| 10 |  (3)   |  Yes   | 0.9   | 50   | 0.001 | 0.930 | 0.945 | 0.957 | 0.948 | 
+| 11 |        |        |       |      |       |       |       |       |       | 
+| 12 |  (3)   |  No    | 0.5   | 500  | 0.0005 |   -   |   -   |   -   | 0.974 | 
 
 Pre-Processing Steps:  
 (1) Grayscale, Normalize  
 (2) Crop, Resize, Grayscale, Normalize  
 (3) Gamma Correction (0.4), Crop (3,3), Resize (32,32), Grayscale, Normalize
+
+The pre-processing steps did improve the validation.  In the case of gamma correction it only improved validation when the depths of the first and second layer were 128 and 32.  Augmenting the data did not improve things for me so utimately I did not use it.  For future improvements I would take another look at augmenting to see why things were not improving.
+
+I tried dropout and changing the number of epochs.  Ultimately, I did not go too far down the path of using dropout.  The number of epochs did have an effect of validation accuracy and I finally settled on early stoppage of 30 epochs for my final model.
+
+In the final entry in the table I went for a large run with 50% dropout and a lighly lower learning rate.  It did not beat one of my more simple runs so it was not used in my final model.
+
+The architecture which gave me the best validation accuracy was model #4.
+
+Here is a training, validation and test plot for model #4.
+
+![Train_Validation_Test_Accuracy](/images/Test%20Accuracy30.png)
 
 | Pre-Processing | Augment | Dropout | Epochs | Rate |  128x32 |
 |:--------------:|:-------:|:-------:|:------:|:----:|:-------:|
@@ -135,9 +134,9 @@ If a well known architecture was chosen:
 * Why did you believe it would be relevant to the traffic sign application?
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
 
-![Train_Validation_Test_Accuracy](/images/Test Accuracy0.png)
+![Train_Validation_Test_Accuracy](/images/Test%20Accuracy0.png)
 
-![Test_Accuracy_By_Class](/images/Class Test Accuracy_0.png)
+![Test_Accuracy_By_Class](/images/Class%20Test%20Accuracy_0.png)
 
 ### 4. Test a Model on New Images
 
@@ -166,7 +165,7 @@ Here are the results of the prediction:
 | Turn Right Ahead			| Turn Right Ahead      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of ...
 
 #### C. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
