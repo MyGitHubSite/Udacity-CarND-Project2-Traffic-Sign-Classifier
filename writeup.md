@@ -111,7 +111,7 @@ The architecture which gave me the best validation accuracy was model #4.
 
 Here is a training, validation and test plot for model #4.
 
-![Train_Validation_Test_Accuracy](/images/Test_Accuracy30.png)
+![Train_Validation_Test_Accuracy](/images/Training_Accuracy30.png)
 
 | Pre-Processing | Augment | Dropout | Epochs | Rate |  128x32 |
 |:--------------:|:-------:|:-------:|:------:|:----:|:-------:|
