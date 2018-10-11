@@ -126,20 +126,21 @@ To train the model, I used an ....
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 
-| Pre-Processing | Augment | Dropout | Epochs |  6x16 | 32x16 | 64x32 | 128x32 |
-|:--------------:|:-------:|:-------:|:------:|:-----:|:-----:|:-----:|:------:| 
-|:(1)           :|:No     :|:1.0    :|:20    :|:0.916:|:0.924:|:0.935:|:0.943 :| 
-|:(2)           :|:No     :|:1.0    :|:20    :|:0.942:|:0.954:|:0.966:|:0.953 :| 
-|:(3)           :|:No     :|:1.0    :|:20    :|:0.941:|:0.942:|:0.955:|:0.962 :| 
-|:(3)           :|:No     :|:1.0    :|:50    :|:0.957:|:0.964:|:0.972:|:0.975 :| 
-|:(3)           :|:No     :|:0.0    :|:50    :|:0.950:|:0.961:|:0.960:|:0.962 :| 
-|:              :|:       :|:       :|:      :|:     :|:     :|:     :|:      :| 
-|:(1)           :|:Yes    :|:1.0    :|:20    :|:0.835:|:0.909:|:0.924:|:0.908 :| 
-|:(2)           :|:Yes    :|:1.0    :|:20    :|:0.909:|:0.930:|:0.948:|:0.931 :| 
-|:(3)           :|:Yes    :|:1.0    :|:20    :|:0.911:|:0.938:|:0.943:|:0.952 :| 
-|:(3)           :|:Yes    :|:1.0    :|:50    :|:0.934:|:0.948:|:0.956:|:0.951 :| 
-|:(3)           :|:Yes    :|:0.9    :|:50    :|:0.930:|:0.945:|:0.957:|:0.948 :| 
-|:              :|:       :|:       :|:      :|:     :|:     :|:     :|:      :| 
+| Pre-Processing | Augment | Dropout | Epochs |   6x16  |  32x16  |  64x32  |  128x32 |
+|:--------------:|:-------:|:-------:|:------:|:-------:|:-------:|:-------:|:-------:| 
+|: (1)          :|: No    :|: 1.0   :|: 20   :|: 0.916 :|: 0.924 :|: 0.935 :|: 0.943 :| 
+|: (2)          :|: No    :|: 1.0   :|: 20   :|: 0.942 :|: 0.954 :|: 0.966 :|: 0.953 :| 
+|: (3)          :|: No    :|: 1.0   :|: 20   :|: 0.941 :|: 0.942 :|: 0.955 :|: 0.962 :| 
+|: (3)          :|: No    :|: 1.0   :|: 50   :|: 0.957 :|: 0.964 :|: 0.972 :|: 0.975 :| 
+|: (3)          :|: No    :|: 0.0   :|: 50   :|: 0.950 :|: 0.961 :|: 0.960 :|: 0.962 :| 
+|:              :|:       :|:       :|:      :|:       :|:       :|:       :|:       :| 
+|: (1)          :|: Yes   :|: 1.0   :|: 20   :|: 0.835 :|: 0.909 :|: 0.924 :|: 0.908 :| 
+|: (2)          :|: Yes   :|: 1.0   :|: 20   :|: 0.909 :|: 0.930 :|: 0.948 :|: 0.931 :| 
+|: (3)          :|: Yes   :|: 1.0   :|: 20   :|: 0.911 :|: 0.938 :|: 0.943 :|: 0.952 :| 
+|: (3)          :|: Yes   :|: 1.0   :|: 50   :|: 0.934 :|: 0.948 :|: 0.956 :|: 0.951 :| 
+|: (3)          :|: Yes   :|: 0.9   :|: 50   :|: 0.930 :|: 0.945 :|: 0.957 :|: 0.948 :| 
+|:              :|:       :|:       :|:      :|:       :|:       :|:       :|:       :| 
+
 (1) Grayscale, Normalize
 (2) Crop, Resize, Grayscale, Normalize
 (3) Gamma Correction, Crop, Resize, Grayscale, Normalize
